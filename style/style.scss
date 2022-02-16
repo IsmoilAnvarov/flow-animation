@@ -1,0 +1,294 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Jira animation part
+Version:    1
+Last change:    first view
+Assigned to:    Anvarov Ismoil
+Primary use:    Learn
+-------------------------------------------------------------------*/
+
+:root {
+  // Colors
+  --light-gray: #dfe1e4;
+  --main-blue: #0048b0;
+  --main-yellow: #ffe380;
+  --light-green: #78f1c0;
+  // Font sizes
+  --medium-size: 18px;
+}
+
+.bg-primary {
+  background-color: var(--main-blue);
+}
+
+.bg-info {
+  background-color: var(--main-yellow);
+  color: black !important;
+}
+
+.bg-aqua {
+  background-color: var(--light-green);
+  color: black !important;
+}
+
+.informer-block {
+  color: white;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  animation-duration: 2s;
+  animation-name: awakening;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+.triangle {
+  transition: 0.5s;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid var(--light-gray);
+  animation-delay: 2.8s;
+  animation-duration: 0.4s;
+  animation-name: awakening;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.line {
+  position: absolute;
+  position: relative;
+  height: 0;
+  width: 3px;
+  background-color: var(--light-gray);
+  top: 30px;
+  left: 50%;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  animation-name: verticalArrow;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  .triangle {
+    position: absolute;
+    bottom: -10px;
+    right: -170%;
+  }
+}
+
+.container {
+  height: 390px;
+  max-width: 1200px;
+  min-width: 1000px;
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+    height: 100%;
+  }
+
+  .starter-block {
+    .starter-arrow {
+      height: 80px;
+      width: 85px;
+      position: relative;
+
+      .point {
+        transition: 0.3s;
+        opacity: 0;
+        left: 35%;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        border-radius: 50%;
+        background: var(--light-gray);
+        animation-delay: 1.8s;
+        animation-duration: 0.4s;
+        animation-name: awakening;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  .block {
+    .informer-block {
+      opacity: 0;
+      animation-duration: 2s;
+      animation-name: awakening;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    .scope {
+      position: relative;
+      padding: 0 40px;
+
+      .top-arrow,
+      .down-arrow {
+        position: absolute;
+        height: 30px;
+        width: 120px;
+        border-radius: 5px;
+        left: 5px;
+        top: -50px;
+
+        .triangle {
+          position: absolute;
+          bottom: -10px;
+          right: -5px;
+          animation-delay: 3.4s;
+          animation-duration: 0.4s;
+          animation-name: awakening;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+
+        &::before {
+          content: " ";
+          position: absolute;
+          top: 0;
+          width: 0%;
+          height: 2px;
+          background-color: var(--light-gray);
+          animation-delay: 2s;
+          animation-duration: 1s;
+          animation-name: horizontalArrow;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+
+        &::after {
+          content: " ";
+          position: absolute;
+          right: 0;
+          height: 0%;
+          width: 2px;
+          background-color: var(--light-gray);
+          animation-delay: 3s;
+          animation-duration: 1s;
+          animation-name: verticalArrow;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      .down-arrow {
+        transform: rotateZ(180deg);
+        right: 16px;
+        top: -9px;
+        width: 75px;
+        left: -44px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-top: 150px !important;
+
+      .informer-block {
+        animation-delay: 0.6s;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-top: 220px !important;
+
+      .informer-block {
+        animation-delay: 0.9s;
+      }
+
+      .top-arrow {
+        width: 160px;
+        left: -30px;
+      }
+
+      .down-arrow {
+        width: 150px;
+        left: -120px;
+      }
+    }
+
+    &:nth-child(4) {
+      margin-top: 290px !important;
+
+      .informer-block {
+        animation-delay: 1.2s;
+      }
+
+      .top-arrow {
+        height: 30px;
+        width: 165px;
+        left: -30px;
+        top: -50px;
+      }
+
+      .down-arrow {
+        width: 166px;
+        left: -136px;
+      }
+    }
+
+    &:nth-child(5) {
+      margin-top: auto !important;
+
+      .informer-block {
+        animation-delay: 1.5s;
+      }
+
+      .scope {
+        padding: 0;
+
+        .top-arrow {
+          left: -32px;
+          height: 23px;
+          width: 80px;
+          top: -39px;
+        }
+      }
+    }
+  }
+}
+
+// Animations
+
+@keyframes awakening {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes verticalArrow {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 30px;
+  }
+}
+
+@keyframes horizontalArrow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
