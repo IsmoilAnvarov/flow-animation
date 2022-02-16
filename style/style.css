@@ -100,6 +100,12 @@ Primary use:    Learn
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 390px;
   max-width: 1200px;
   min-width: 1000px;

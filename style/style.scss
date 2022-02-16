@@ -85,6 +85,8 @@ Primary use:    Learn
 }
 
 .container {
+  display: flex;
+  justify-content: center;
   height: 390px;
   max-width: 1200px;
   min-width: 1000px;
