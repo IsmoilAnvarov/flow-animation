@@ -1,0 +1,371 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Jira animation part
+Version:    1
+Last change:    first view
+Assigned to:    Anvarov Ismoil
+Primary use:    Learn
+-------------------------------------------------------------------*/
+:root {
+  --light-gray: #dfe1e4;
+  --main-blue: #0048b0;
+  --main-yellow: #ffe380;
+  --light-green: #78f1c0;
+  --medium-size: 18px;
+}
+
+.bg-primary {
+  background-color: var(--main-blue);
+}
+
+.bg-info {
+  background-color: var(--main-yellow);
+  color: black !important;
+}
+
+.bg-aqua {
+  background-color: var(--light-green);
+  color: black !important;
+}
+
+.informer-block {
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: awakening;
+          animation-name: awakening;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.triangle {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid var(--light-gray);
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-name: awakening;
+          animation-name: awakening;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.line {
+  position: absolute;
+  position: relative;
+  height: 0;
+  width: 3px;
+  background-color: var(--light-gray);
+  top: 30px;
+  left: 50%;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: verticalArrow;
+          animation-name: verticalArrow;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.line .triangle {
+  position: absolute;
+  bottom: -10px;
+  right: -170%;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 390px;
+  max-width: 1200px;
+  min-width: 1000px;
+  margin: 0 auto;
+}
+
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.container .starter-block .starter-arrow {
+  height: 80px;
+  width: 85px;
+  position: relative;
+}
+
+.container .starter-block .starter-arrow .point {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  left: 35%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--light-gray);
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-name: awakening;
+          animation-name: awakening;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.container .block .informer-block {
+  opacity: 0;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: awakening;
+          animation-name: awakening;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.container .block .scope {
+  position: relative;
+  padding: 0 40px;
+}
+
+.container .block .scope .top-arrow,
+.container .block .scope .down-arrow {
+  position: absolute;
+  height: 30px;
+  width: 120px;
+  border-radius: 5px;
+  left: 5px;
+  top: -50px;
+}
+
+.container .block .scope .top-arrow .triangle,
+.container .block .scope .down-arrow .triangle {
+  position: absolute;
+  bottom: -10px;
+  right: -5px;
+  -webkit-animation-delay: 3.4s;
+          animation-delay: 3.4s;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-name: awakening;
+          animation-name: awakening;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.container .block .scope .top-arrow::before,
+.container .block .scope .down-arrow::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--light-gray);
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: horizontalArrow;
+          animation-name: horizontalArrow;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.container .block .scope .top-arrow::after,
+.container .block .scope .down-arrow::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  height: 0%;
+  width: 2px;
+  background-color: var(--light-gray);
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: verticalArrow;
+          animation-name: verticalArrow;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.container .block .scope .down-arrow {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  right: 16px;
+  top: -9px;
+  width: 75px;
+  left: -44px;
+}
+
+.container .block:nth-child(2) {
+  margin-top: 150px !important;
+}
+
+.container .block:nth-child(2) .informer-block {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.container .block:nth-child(3) {
+  margin-top: 220px !important;
+}
+
+.container .block:nth-child(3) .informer-block {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.container .block:nth-child(3) .top-arrow {
+  width: 160px;
+  left: -30px;
+}
+
+.container .block:nth-child(3) .down-arrow {
+  width: 150px;
+  left: -120px;
+}
+
+.container .block:nth-child(4) {
+  margin-top: 290px !important;
+}
+
+.container .block:nth-child(4) .informer-block {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.container .block:nth-child(4) .top-arrow {
+  height: 30px;
+  width: 165px;
+  left: -30px;
+  top: -50px;
+}
+
+.container .block:nth-child(4) .down-arrow {
+  width: 166px;
+  left: -136px;
+}
+
+.container .block:nth-child(5) {
+  margin-top: auto !important;
+}
+
+.container .block:nth-child(5) .informer-block {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.container .block:nth-child(5) .scope {
+  padding: 0;
+}
+
+.container .block:nth-child(5) .scope .top-arrow {
+  left: -32px;
+  height: 23px;
+  width: 80px;
+  top: -39px;
+}
+
+@-webkit-keyframes awakening {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes awakening {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes verticalArrow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30px;
+  }
+}
+
+@keyframes verticalArrow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30px;
+  }
+}
+
+@-webkit-keyframes horizontalArrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes horizontalArrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
